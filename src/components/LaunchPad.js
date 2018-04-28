@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class LaunchDetails extends React.Component {
+class LaunchPad extends React.Component {
   static propTypes = {
     username: PropTypes.string.isRequired,
   }
@@ -16,12 +16,11 @@ class LaunchDetails extends React.Component {
     return (
       <div>
         <h1 >
-          <h1>Launch</h1>
-          <span >bla</span>
+          <h1>LaunchPad</h1>
         </h1>
       </div>
     );
   }
 }
 
-export default LaunchDetails;
+export default LaunchPad;

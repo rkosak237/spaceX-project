@@ -9,7 +9,10 @@ class Header extends React.Component {
 
     return (
       <nav className="container__nav">
-        <p className="category__title"> go back</p>
+        <div>
+          <p className="category__title"> go back</p>
+        </div>
+        
         <a href="#" className="nav__company_logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="590" height="73" viewBox="0 0 590 73">
               <g fill="none" fill-rule="nonzero">
