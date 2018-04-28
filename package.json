@@ -1,5 +1,6 @@
 {
-  "author": "DaftCode",
+  "author": "Robert Kosak",
+  "homepage": "https://rkosak237.github.io/spaceX-project",
   "license": "MIT",
   "name": "daftcode-react-starter",
   "version": "1.0.0",
@@ -8,7 +9,9 @@
     "start": "webpack-dev-server",
     "build": "webpack --config webpack.config.prod.js",
     "serve": "serve dist",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "prop-types": "^15.6.1",
@@ -32,6 +35,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "file-loader": "^1.1.11",
+    "gh-pages": "^1.1.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.8.3",
