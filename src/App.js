@@ -7,7 +7,6 @@ import LaunchDetails from './LaunchDetails';
 // import LaunchPad from './components/LaunchPad.js';
 import Content from './components/Content';
 import Footer from './components/Footer';
-
 import launch from './assets/launch.json';
 import launchSite from './assets/launch_site.json';
 import rocket from './assets/rocket.json';
