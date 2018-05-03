@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import './../styles/_Header.sass';
 
 class Header extends React.Component {
 
@@ -10,7 +10,7 @@ class Header extends React.Component {
     return (
       <nav className="container__nav">
         <div>
-          <p className="category__title"> go back</p>
+          <p className="nav__title"> go back</p>
         </div>
         
         <a href="#" className="nav__company_logo">

@@ -2,3 +2,48 @@
 
 footer
   background-color: $navigation-background-color
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: 100px
+
+.Container_footer
+	display: flex
+	flex: wrap
+	justify-content: space-between
+	width: 100%
+	text-transform: uppercase
+	margin-left: 146px
+	margin-right: 146px
+
+	p
+		text-align: right
+		flex: 2
+		color: #666666
+		font-size: 14px
+		letter-spacing: 1px
+
+.links__container
+	align-items: center
+	color: #a7a9ac
+	display: flex
+	font-size: 14px
+	letter-spacing: 1px
+	flex: 1
+	justify-content: space-between
+	width: 35rem
+
+	a:first-child
+		color: #666666
+		position: relative
+
+		&:after
+			content: ' ';
+			background-color: #666
+			height: 19px
+			width: 1px
+			position: absolute
+			right: -18px
+
+
+
