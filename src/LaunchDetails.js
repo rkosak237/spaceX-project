@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Details from './components/Details';
 import Rocket from './components/Rocket';
 import LaunchPad from './components/LaunchPad';
-import './styles/_LaunchDetails.sass';
+// import './styles/_LaunchDetails.sass';
 
 class LaunchDetails extends React.Component {
 
