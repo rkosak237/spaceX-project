@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './../styles/_Rocket.sass';
+// import './../styles/_Rocket.sass';
 
 class Rocket extends React.Component {
 

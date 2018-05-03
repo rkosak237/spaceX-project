@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './../styles/_LaunchPad.sass';
+// import './../styles/_LaunchPad.sass';
 
 class LaunchPad extends React.Component {
   render() {
@@ -8,7 +8,7 @@ class LaunchPad extends React.Component {
 
     return (
       <div>
-          <h1 className="category__title">LaunchPad</h1>
+          <h1 className="launchPad__title">LaunchPad</h1>
         <div className="launchPad__copyContainer"> 
           <div className="launchPad__specification"> 
           <p>name</p>

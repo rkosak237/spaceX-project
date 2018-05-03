@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './../styles/_Content.sass';
+// import './../styles/_Content.sass';
 
 class Content extends React.Component {
 

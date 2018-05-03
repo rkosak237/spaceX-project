@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './../styles/_Details.sass';
+// import './../styles/_Details.sass';
 
 class Details extends React.Component {
   render() {

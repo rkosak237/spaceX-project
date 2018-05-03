@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './../styles/_Footer.sass';
+// import './../styles/_Footer.sass';
 
 
 class Footer extends React.Component {
