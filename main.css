@@ -193,17 +193,33 @@ p, li {
   margin-top: 25px;
   padding-left: 35px;
   padding-right: 35px; }
-  .launchPad__specification p, .launchPad__stats p {
-    color: #a7a9ac;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    margin: 0;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    text-transform: uppercase; }
-    .launchPad__specification p span, .launchPad__stats p span {
-      color: #0f1112; }
+  .launchPad__specification ul, .launchPad__stats ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+    .launchPad__specification ul li, .launchPad__stats ul li {
+      color: #a7a9ac;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      margin: 0;
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      text-transform: uppercase; }
+    .launchPad__specification ul .specification_results, .launchPad__stats ul .specification_results {
+      -webkit-box-flex: 4;
+          -ms-flex: 4;
+              flex: 4;
+      color: #0f1112;
+      padding: 0px 0.5rem 0 0.5rem; }
+      @media only screen and (min-width: 1400px) {
+        .launchPad__specification ul .specification_results, .launchPad__stats ul .specification_results {
+          -webkit-box-flex: 6;
+              -ms-flex: 6;
+                  flex: 6; } }
 
 body {
   font-family: 'Open Sans', sans-serif;
