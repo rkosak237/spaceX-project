@@ -6,19 +6,24 @@ class LaunchPad extends React.Component {
  
 
     return (
-      <div>
+      <section>
           <h1 className="launchPad__title">LaunchPad</h1>
         <div className="launchPad__copyContainer"> 
-          <div className="launchPad__specification"> 
-            <p>name: <span>{this.props.name}</span></p>
+          <div className="launchPad__specification">
+            <ul>
+              <li key="launchPad-name">name:  </li>
+              <li className="specification_results" key="launchPad-name__results"> {this.props.name}</li>
+            </ul>
           </div>
           <div className="launchPad__stats"> 
-          <p>location: <span>{this.props.location.name}, {this.props.location.region}
-          </span></p>
+          <ul>
+            <li key="location">location: </li>
+            <li className="specification_results" key="location-name__results">{this.props.location.name}, {this.props.location.region}</li>
+          </ul>
           </div>
         </div>
           <p>{this.props.details}</p>
-      </div>
+      </section>
     );
   }
 }
