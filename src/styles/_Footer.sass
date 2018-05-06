@@ -7,23 +7,25 @@ footer
   align-items: center
   height: 100px
 
-.Container_footer
+.Container-footer
 	display: flex
-	flex: wrap
+	flex-wrap: wrap
 	justify-content: space-between
-	width: 100%
+	flex: 1
 	text-transform: uppercase
 	margin-left: 146px
 	margin-right: 146px
 
 	p
 		text-align: right
-		flex: 2
-		color: #666666
+		flex: 1
+		color: $brownish-grey
 		font-size: 14px
 		letter-spacing: 1px
+		@media only screen and (min-width: 1400px) 
+			flex: 2
 
-.links__container
+.footer__links
 	align-items: center
 	color: #a7a9ac
 	display: flex
@@ -31,19 +33,26 @@ footer
 	letter-spacing: 1px
 	flex: 1
 	justify-content: space-between
-	width: 35rem
+
+	a
+		cursor: pointer
+
+		&:hover
+			color: $white
 
 	a:first-child
-		color: #666666
+		color: $brownish-grey
 		position: relative
+
+		&:hover
+			color: $white
 
 		&:after
 			content: ' ';
-			background-color: #666
+			background-color: $brownish-grey
 			height: 19px
 			width: 1px
 			position: absolute
 			right: -18px
-
 
 

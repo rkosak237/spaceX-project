@@ -9,15 +9,19 @@
 	justify-content: space-around
 
 .launchPad__specification, .launchPad__stats
-	displa: flex
-	flex-direction: column
-	justify-content: space-around
-	width: 50%
+	display: flex
+	flex: 1
 	border-left: dotted 2px $specification-color
 	margin-top: 25px
+	padding-left: 35px
+	padding-right: 35px
 	
 	p
 		color: $specification-color
-		padding-left: 35px
+		justify-content: space-around
 		margin: 0
+		flex: 1
 		text-transform: uppercase
+		
+		span
+			color: $paragraph-color

@@ -1,16 +1,44 @@
 @import "~styles/variables"  // '~' informs sass-loader that is not relative path
 
-.container__nav
+nav
   display: flex
-  align-items: center;
-  justify-content: space-between;
+  align-items: center
+  justify-content: space-between
   background-color: $header-font-color
   .nav__title
+    padding-left: 5rem
     @extend .category__title
 
-.nav__company_logo
-  width: 20%
-  flex: 11
+.nav__return
+  flex: 1 
+  a
+    display: flex
+    align-items: center
+    cursor: pointer
+
+    svg 
+      padding-left: 52px
+      position: relative
+
+    &:before
+        content: ''
+        width: 4rem
+        height: 2px
+        position: absolute
+        background-color: $emphasized-color
+        left: 54px
+
+.nav-wraper
+  display: flex
+  justify-content: center
+  flex: 1
+
+
+  
+.nav__company-logo
+
   svg
-  	width: 100%
   	height: 2.9rem
+
+.nav__empty
+  flex: 1
