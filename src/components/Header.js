@@ -10,7 +10,7 @@ class Header extends React.Component {
         <div className="nav__return">
           <a src="#">
           <svg width="8" height="10" viewBox="0 0 8 10">
-              <path fill="#CCAC5B" fill-rule="evenodd" d="M7.357 0v10L0 5z"/>
+              <path fill="#CCAC5B" fillRule="evenodd" d="M7.357 0v10L0 5z"/>
           </svg>
             <p className="nav__title"> go back</p>
          </a>
