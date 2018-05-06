@@ -1,4 +1,5 @@
 import React from 'react';
+import './../styles/_Details.sass';
 
 class Details extends React.Component {
   render() {
