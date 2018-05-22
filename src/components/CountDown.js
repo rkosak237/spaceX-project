@@ -1,3 +1,5 @@
+//src https://github.com/michalwiacek
+
 import * as React from "react";
 import PropTypes from "prop-types";
 import Moment from 'react-moment';
@@ -16,16 +18,14 @@ class CountDown extends React.PureComponent {
   }
 
   componentDidMount() {
-    this.togglePlay()
+    this.togglePlay();
   }
 
   componentDidUpdate() {
     this.validateSuccess();
   }
 
-  /**
-   * Run onSuccess callback if defined after counter is finished
-   */
+
   validateSuccess = () => {
     const { secondsLeft } = this.state
     const { onSuccess } = this.props
@@ -34,9 +34,7 @@ class CountDown extends React.PureComponent {
     }
   }
 
-  /**
-   * Run counter
-   */
+ 
   start = () => {
     this.counterInterval = setInterval(this.tick, 1000) //1000ms -> 1sec
   }
@@ -54,16 +52,12 @@ class CountDown extends React.PureComponent {
     this.setState(newState)
   }
 
-  /**
-   * Clear timer used by counter
-   */
+  
   stop = () => {
     clearInterval(this.counterInterval)
   }
 
-  /**
-   * Pause or play depending on active status
-   */
+
   togglePlay = () => {
     const { active, secondsLeft } = this.state
     if(secondsLeft !== 0){

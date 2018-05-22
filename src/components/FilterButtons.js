@@ -14,15 +14,12 @@ class FilterButtons extends React.Component {
 
 
   render() {
-    const filterButtons = this.props.options.map(option =>
-            <Button
-            key={option}
-            buttonText={option}
-            onClick = {e => this.handleclick(option, e)}/>);
     return (
             <div className="wrapper__buttons">
-                <Button buttonText="All Rockets" onClick={e => this.handleClick('', e)} />
-            {filterButtons}
+              <button>all rockets</button>
+              <button>falcon 1</button> 
+              <button>falcon heavy</button> 
+              <button>dragon</button> 
             </div>
     );
   }
