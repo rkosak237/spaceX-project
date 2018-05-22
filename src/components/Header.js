@@ -1,5 +1,5 @@
 import React from 'react';
-import './../styles/_Header.sass';
+
 
 class Header extends React.Component {
 
@@ -9,7 +9,7 @@ class Header extends React.Component {
     return (
       <nav>
         <div className="nav__return">
-          <a src="#">
+          <a onClick={this.props.onBackClick} src="#">
           <svg width="8" height="10" viewBox="0 0 8 10">
               <path fill="#CCAC5B" fillRule="evenodd" d="M7.357 0v10L0 5z"/>
           </svg>

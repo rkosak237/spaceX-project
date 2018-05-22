@@ -14,12 +14,52 @@ main
   border-radius: 0rem
   background: $background-color
 
-// @import "Header"
-// @import "LaunchDetails"
-// @import "Details"
-// @import "Rocket"
-// @import "LaunchPad"
-// @import "Content"
-// @import "Footer"
+button 
+  background-color: transparent
+  border-radius: 20px
+  color: $specification-color
+  font-size: 14px
+  letter-spacing: 1px
+  border: 1px solid white
+  padding: 1rem 4rem 1rem 4rem 
+  margin: 1rem
+  text-transform: uppercase
+  transition: .4s ease-in-out
+
+  &:hover
+  	color: $white
+  	-webkit-box-shadow: inset 0px 0px 18px 0px #fff
+  	-moz-box-shadow: inset 0px 0px 18px 0px #fff
+  	box-shadow: inset 0px 0px 18px 0px #fff
+  &:active
+  	color: $white
+  	-webkit-box-shadow: inset 0px 0px 18px 0px #fff
+  	-moz-box-shadow: inset 0px 0px 18px 0px #fff
+  	box-shadow: inset 0px 0px 18px 0px #fff
+
+h1
+  	color: $white
+  	font-size: 24px
+  	letter-spacing: 18px
+  	text-transform: uppercase
+  	text-align: left 
+
+
+.details__theme
+  background-color: $background-color__list-theme
+
+
+@import "Header"
+@import "LaunchDetails"
+@import "Details"
+@import "Rocket"
+@import "LaunchPad"
+@import "LaunchDetails"
+@import "LaunchesList"
+@import "FilterButtons"
+@import "List"
+@import "ListElement"
+@import "Content"
+@import "Footer"
 
 

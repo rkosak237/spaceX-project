@@ -1,5 +1,5 @@
 import React from 'react';
-import './../styles/_LaunchPad.sass';
+
 
 class LaunchPad extends React.Component {
   render() {

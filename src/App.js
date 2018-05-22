@@ -1,7 +1,7 @@
 import { hot } from 'react-hot-loader';
 import * as React from 'react';
-import Header from './components/Header';
-import LaunchDetails from './LaunchDetails';
+import LaunchDetails from 'view/LaunchDetails';
+import LaunchesList from 'view/LaunchesList';
 // import Details from './components/Details.js';
 // import Rocket from './components/Rocket';
 // import LaunchPad from './components/LaunchPad.js';
@@ -14,17 +14,61 @@ import rocket from './assets/rocket.json';
 import './styles/theme.sass';
 
 class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props) {
+    super(props);
+    this.state = {
+      viewName: 'details',
+    };
+
+    this.handleLaunchClick = this.handleLaunchClick.bind(this);
+    this.handleBackClick = this.handleBackClick.bind(this);
+  }
+
+  get activeViewComponent() {
+    const { viewName } = this.state;
+
+    switch (viewName) {
+      case 'list':
+        return (
+          <main className="details__theme">
+               <LaunchesList
+              //launches={launches}
+              onLaunchClick={this.handleLaunchClick}
+              />
+              <Footer />
+            </main>
+        );
+
+      case 'details':
+        return (
+            <main>
+              <LaunchDetails
+                launch={launch}
+                launchSite={launchSite}
+                rocket={rocket}
+                onBackClick={this.handleBackClick}
+              />
+              <Content />
+              <Footer />
+            </main>
+        );
+
+      default: return null;
+    }
+  }
+
+  handleLaunchClick() {
+    this.setState({ viewName: 'details' });
+  }
+
+  handleBackClick() {
+    this.setState({ viewName: 'list' });
+  }
+
   render() {
     return (
       <main>
-        <Header />
-        <LaunchDetails
-          launch={launch}
-          launchSite={launchSite}
-          rocket={rocket}
-        />
-        <Content />
-        <Footer />
+        {this.activeViewComponent}
       </main>
     );
   }

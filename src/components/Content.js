@@ -1,5 +1,4 @@
 import React from 'react';
-import './../styles/_Content.sass';
 class Content extends React.Component {
 
 

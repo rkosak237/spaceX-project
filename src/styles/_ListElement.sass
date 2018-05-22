@@ -1,0 +1,110 @@
+@import "~styles/variables"
+@import "LaunchPad"
+
+.ListElement__container
+	display: flex
+	flex-direction: row
+	flex: 1
+	padding-top: 35px
+
+.ListElement__wraper
+	flex: 1
+
+.ListElement--empty
+	flex: 1
+	margin-left: 100px
+
+.ListElement__title
+	@extend .category__title
+	color: $white
+
+.right
+	text-align: right
+	justify-content: flex-end
+
+.ListElement__copyContainer--right
+	@extend .launchPad__copyContainer
+	justify-content: flex-end
+	border-top: 2px solid $emphasized-color
+	position: relative
+
+	&:before
+		content: ''
+		position: absolute
+		width: 10px
+		height: 10px
+		border-radius: 50%
+		left: -55.57px
+		top: -7px
+		background-color: $specification-color
+
+	&:after 
+		content: ''
+		width: 10px
+		height: 10px
+		position: absolute
+		background-image: url("../assets/img/arrow_pointer.png")
+		background-repeat: no-repeat
+		left: -5px
+		top: -6px
+
+.ListElement__copyContainer
+	@extend .launchPad__copyContainer
+	width: 100%
+	justify-content: left
+	border-top: 2px solid $emphasized-color
+	position: relative
+
+	&:before
+		content: ''
+		position: absolute
+		width: 10px
+		height: 10px
+		border-radius: 50%
+		right: -54.57px
+		top: -6px
+		background-color: $specification-color
+	&:after 
+		content: ''
+		width: 10px
+		height: 10px
+		position: absolute
+		background-image: url("../assets/img/arrow_pointer.png")
+		background-repeat: no-repeat
+		right: -7px
+		top: -5px
+		transform: rotate(180deg)
+
+
+
+.ListElement__specification
+	border-right: 1px solid $specification-color
+
+.ListElement__specification
+	padding-right: 1rem
+
+.ListElement__stats 
+	padding-left: 1rem
+
+.ListElement__specification, .ListElement__stats
+	display: flex
+	margin-top: 20px
+
+	ul
+		display: flex
+		list-style: none
+		padding: 0
+		margin: 0
+
+		li
+			color: $specification-color
+			justify-content: space-around
+			margin: 0
+			text-transform: uppercase
+
+		.specification_results 
+			color: $white
+			padding: 0px 0.5rem 0 0.5rem
+			
+			@media only screen and (min-width: 1400px)
+				flex: 6
