@@ -1,5 +1,3 @@
-//src https://github.com/michalwiacek
-
 import * as React from "react";
 import PropTypes from "prop-types";
 import Moment from 'react-moment';
@@ -10,11 +8,11 @@ function getTimeDiff({to, today}) {
 }
 
 class CountDown extends React.PureComponent {
-	 counterInterval
+	 counterInterval 
   
   state = {
     secondsLeft: getTimeDiff(this.props),
-    isOff: false,
+    active: false,
   }
 
   componentDidMount() {
@@ -24,6 +22,11 @@ class CountDown extends React.PureComponent {
   componentDidUpdate() {
     this.validateSuccess();
   }
+
+  componentWillUnmount() {
+    clearInterval(this.counterInterval);
+  }
+
 
 
   validateSuccess = () => {
@@ -44,7 +47,6 @@ class CountDown extends React.PureComponent {
     const newState = {
       secondsLeft: secondsLeft - 1,
     }
-
     if (newState.secondsLeft === 0) {
       newState.active = false
       this.stop()

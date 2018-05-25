@@ -2,27 +2,31 @@ import React from 'react';
 import FilterButtons from './../components/FilterButtons';
 import List from './../components/List';
 
-class LaunchesList extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  get availableRocketNames() {
-    const {launches} = this.props;
-
-    const rocketNames = [];
-    // get all names from launches
-
-    return rocketNames;
+class LaunchesList extends React.Component {
+constructor(props) {
+  super(props);
+  this.state = {
+    availableRocketNames: ['All Rockets', 'Falcon 1', 'Falcon 9', 'Falcon 10', 'Falcon Heavy'],
   }
+} // eslint-disable-line react/prefer-stateless-function
 
+  //pobiera wyniki z launches
+//filtruje wyniki z launches
   get filteredLaunches(){
     const {rocketNameFilter} = this.state;
     const {launches} = this.props;
 
-    if(!rocketNameFilter) return launches;
+    //https://api.spacexdata.com/v2/launches?rocket_name=${value}
 
+    if(!rocketNameFilter) return launches;
+    console.log(rocketNameFilter);
     return launches.filter( launch => launch.rocket.rocket_name === rocketNameFilter );
   }
 
   handleFilterChange(value) {
-    this.setState({ rocketNameFilter: value });
+    // this.setState({ rocketNameFilter: value });
+    // console.log(rocketNameFilter); 
+
   }
 
   render() {
@@ -41,11 +45,13 @@ class LaunchesList extends React.Component { // eslint-disable-line react/prefer
             <h1 className="launchesList__header">Launches 2018</h1>
           </div>
         <FilterButtons
-          options={this.availableRocketNames}
+          options={this.state.availableRocketNames}
           onChange={this.handleFilterChange}
         />
         </section>
-          <List />
+          <List 
+          launches={this.props.launches}
+          />
         </section>
     );
   }

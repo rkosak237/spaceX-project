@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import launch from './assets/launch.json';
 import launchSite from './assets/launch_site.json';
 import rocket from './assets/rocket.json';
+import launches from './assets/launches.json';
 
 import './styles/theme.sass';
 
@@ -32,7 +33,7 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
         return (
           <main className="details__theme">
                <LaunchesList
-              //launches={launches}
+              launches={launches}
               onLaunchClick={this.handleLaunchClick}
               />
               <Footer />

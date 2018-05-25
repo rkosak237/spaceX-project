@@ -1,22 +1,27 @@
 import React from 'react';
+import { format } from 'date-fns';
+import { en } from 'date-fns/locale/en';
+
 class ListElementLeft extends React.Component {
 
   render() {
+    const { rocketList, key, location, date } = this.props;
+    const formatedDate = format(date, 'DD MMMM YYYY', {locale: en})
     return (
         	<div className="ListElement ListElement__container">
                 <div className="ListElement ListElement__wraper">
-                    <h1 className="ListElement ListElement__title">28 april 2018</h1>
+                    <h1 className="ListElement ListElement__title">{formatedDate}</h1>
                     <div className="ListElement ListElement__copyContainer"> 
                       <div className="ListElement ListElement__specification">
                         <ul>
-                          <li key="launchPad-name">rocket:  </li>
-                          <li className="specification_results" key="launchPad-name__results">falcon9</li>
+                           <li key="{rocketList}">rocket:  </li>
+                           <li className="specification_results" key="{rocketList}">{rocketList}</li>
                         </ul>
                       </div>
                       <div className="ListElement__stats"> 
                       <ul>
-                        <li key="location">launch site: </li>
-                        <li className="specification_results" key="location-name__results">kwajalein atoll omelek island
+                         <li key="{location}">launch site: </li>
+                         <li className="specification_results" key="location-name__results">{location}
                         </li>
                       </ul>
                       </div>
