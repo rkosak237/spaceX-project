@@ -60,7 +60,6 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
 
   handleLaunchClick() {
     this.setState({ viewName: 'details' });
-    console.log('works');
   }
 
   handleBackClick() {

@@ -4,9 +4,7 @@ import Button from './Button';
 class FilterButtons extends React.Component {
     constructor(props) {
     super(props);
-    this.state = {
-      value: "",
-    };
+
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(value, event) {

@@ -17,31 +17,16 @@ constructor(props) {
   this.handleFilterChange = this.handleFilterChange.bind(this);
 } // eslint-disable-line react/prefer-stateless-function
 
-  //pobiera wyniki z launches
-//filtruje wyniki z launches
-  // get filteredLaunches(){
-  //   const {rocketNameFilter} = this.state;
-  //   const {launches} = this.props;
-      
-  //   //https://api.spacexdata.com/v2/launches?rocket_name=${value}
-
-  //   if(!rocketNameFilter) return launches;
-  //   return launches.filter( launch => launch.rocket.rocket_name === rocketNameFilter );
-  //   console.log(launches);
-  // }
-
   fetchData(value) {
+    this.setState({error: false});
+    this.setState({ isLoading: true});
     let endpoint = "https://api.spacexdata.com/v2";
-    let rockets = "/launches?rocket_name";
-    let url = endpoint + rockets;
-    const { rocketNameFilter } = this.state;
+    let rockets = "/launches?rocket_name=";
+    const { rocketNameFilter, launches } = this.state;
+    // !rocketNameFilter ? '' : rocketNameFilter;
+    rocketNameFilter === 'All Rockets' ? this.setState({ rocketNameFilter: ''}) : rocketNameFilter; ;
+    const url = endpoint + rockets + rocketNameFilter;
       
-  //   //https://api.spacexdata.com/v2/launches?rocket_name=${value}
-
-  //   if(!rocketNameFilter) return launches;
-  //   return launches.filter( launch => launch.rocket.rocket_name === rocketNameFilter );
-  //   console.log(launches);
-
     fetch(url)
       .then(response => response.json())
       .then(data => this.setState({
@@ -52,23 +37,22 @@ constructor(props) {
         isLoading: false, 
         error: true 
       }));
+    return launches.filter( launch => launch.rocket.rocket_name === rocketNameFilter ?  launch.rocket.rocket_name : 
+    this.setState({error: true})  );
 
   }
 
   componentDidMount() {
-    this.setState({ isLoading: true});
     this.fetchData();
-    console.log('pobrano');
   }
 
   handleFilterChange(value) {
     this.setState({ rocketNameFilter: value });
-    // console.log(rocketNameFilter); 
+    this.fetchData(value);
   }
 
 
   render() {
-    console.log('chwila');
     return (
       <section className="launchesList__section">
         <section className="launchesList__first"> 

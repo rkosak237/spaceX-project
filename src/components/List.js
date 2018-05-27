@@ -10,7 +10,7 @@ class List extends React.Component {
     const RocketsList = launches.sort((a, b) => b.flight_number - a.flight_number);
     return (
 
-        	<div className="list">
+        	<div id='list' className="list">
                 {RocketsList.map(side => 
                     side.flight_number %2 ?
                     <ListElementRight
