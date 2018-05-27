@@ -28,7 +28,7 @@ class LaunchDetails extends React.Component {
          <div className="launchDetails__wraper">
             <div className="launchDetails-wraper__rocketLaunch">
                 <h2 className="launchDetails__title">{date}</h2>
-                <h1>Iridium next 5 launch</h1>
+                <h1>{this.props.launch.launch_site.site_name}</h1>
                 <CountDown to={date_of_start} today={Math.floor(new Date().getTime()/1000)} />
                 <img src={this.props.launch.links.mission_patch} />
             </div>

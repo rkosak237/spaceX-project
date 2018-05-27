@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 import launch from './assets/launch.json';
 import launchSite from './assets/launch_site.json';
 import rocket from './assets/rocket.json';
-import launches from './assets/launches.json';
 
 import './styles/theme.sass';
 
@@ -18,7 +17,7 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
   constructor(props) {
     super(props);
     this.state = {
-      viewName: 'details',
+      viewName: 'list',
     };
 
     this.handleLaunchClick = this.handleLaunchClick.bind(this);
@@ -32,10 +31,9 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
       case 'list':
         return (
           <main className="details__theme">
-               <LaunchesList
-              launches={launches}
+            <LaunchesList
               onLaunchClick={this.handleLaunchClick}
-              />
+             />
               <Footer />
             </main>
         );
@@ -49,7 +47,9 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
                 rocket={rocket}
                 onBackClick={this.handleBackClick}
               />
-              <Content />
+              <Content 
+              	links={launch}
+              />
               <Footer />
             </main>
         );
@@ -60,6 +60,7 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
 
   handleLaunchClick() {
     this.setState({ viewName: 'details' });
+    console.log('works');
   }
 
   handleBackClick() {

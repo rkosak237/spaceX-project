@@ -8,7 +8,6 @@ class List extends React.Component {
   render() {
     const { launches } = this.props;
     const RocketsList = launches.sort((a, b) => b.flight_number - a.flight_number);
-    console.log(RocketsList);
     return (
 
         	<div className="list">
@@ -19,6 +18,7 @@ class List extends React.Component {
                         key={side.flight_number}
                         rocketList={side.rocket.rocket_name}
                         location={side.launch_site.site_name_long}
+                        onLaunchClick={this.props.onLaunchClick}
                     />
                     :
                     <ListElementLeft
@@ -26,6 +26,7 @@ class List extends React.Component {
                         key={side.flight_number}
                         rocketList={side.rocket.rocket_name}
                         location={side.launch_site.site_name_long}
+                        onLaunchClick={this.props.onLaunchClick}
                     />
                     )
                 }
