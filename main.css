@@ -530,7 +530,8 @@ p, li {
           flex-direction: column; }
 
 .launchesList__first {
-  height: 90vh; }
+  height: 90vh;
+  margin: 0 0 100px 0; }
 
 .moon {
   display: -webkit-box;
@@ -569,6 +570,28 @@ p, li {
     height: 100%;
     width: 100%;
     padding-left: 63px; }
+
+.sweet-loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px; }
+
+.list__error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px; }
+  .list__error .list__error-text {
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 9px; }
 
 .wrapper__buttons {
   display: -webkit-box;
@@ -641,73 +664,6 @@ h1 {
 p, li {
   letter-spacing: 1px; }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  color: #0f1112; }
-
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
-  font-weight: 600;
-  letter-spacing: 9px;
-  font-size: 14px;
-  color: #ccac5b;
-  text-transform: uppercase; }
-
-h1 {
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  font-size: 36px; }
-
-p, li {
-  letter-spacing: 1px; }
-
-.launchPad__copyContainer, .ListElement__copyContainer--right, .ListElement__copyContainer {
-  border-top: 1px solid #ccac5b;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
-
-.launchPad__specification, .launchPad__stats {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  border-left: dotted 2px #a7a9ac;
-  margin-top: 25px;
-  padding-left: 35px;
-  padding-right: 35px; }
-  .launchPad__specification ul, .launchPad__stats ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0; }
-    .launchPad__specification ul li, .launchPad__stats ul li {
-      color: #a7a9ac;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
-      margin: 0;
-      -webkit-box-flex: 1;
-          -ms-flex: 1;
-              flex: 1;
-      text-transform: uppercase; }
-    .launchPad__specification ul .specification_results, .launchPad__stats ul .specification_results {
-      -webkit-box-flex: 4;
-          -ms-flex: 4;
-              flex: 4;
-      color: #0f1112;
-      padding: 0px 0.5rem 0 0.5rem; }
-      @media only screen and (min-width: 1400px) {
-        .launchPad__specification ul .specification_results, .launchPad__stats ul .specification_results {
-          -webkit-box-flex: 6;
-              -ms-flex: 6;
-                  flex: 6; } }
-
 .ListElement__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -724,7 +680,8 @@ p, li {
 .ListElement__wraper {
   -webkit-box-flex: 1;
       -ms-flex: 1;
-          flex: 1; }
+          flex: 1;
+  cursor: pointer; }
 
 .ListElement--empty {
   -webkit-box-flex: 1;
