@@ -4,32 +4,24 @@ import Button from './Button';
 class FilterButtons extends React.Component {
     constructor(props) {
     super(props);
-
-    this.handleClick = this.handleClick.bind(this);
   }
   handleClick(value, event) {
     this.props.onChange(value);
-  };
-
+  }
 
   render() {
-    const { options } = this.props;
+    const { options, handleFilterChange } = this.props;
     const filterButtons = options.map(option =>
             <Button
               key={option}
               buttonText={option}
-              onClick = {e => this.handleClick(option, e)}
+              onClick={e => this.handleClick(option, e)}
             />);
     return (
             <div className="wrapper__buttons">
-            {options.map((option) =>
-            <Button
-              key={option}
-              buttonText={option}
-              onClick = {e => this.handleClick(option, e)}
-            />)}
+            {filterButtons}
           </div>
     );
-  }
-}
-export default FilterButtons;
+  }         
+}       
+export default FilterButtons;   

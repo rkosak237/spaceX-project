@@ -19,9 +19,6 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
     this.state = {
       viewName: 'list',
     };
-
-    this.handleLaunchClick = this.handleLaunchClick.bind(this);
-    this.handleBackClick = this.handleBackClick.bind(this);
   }
 
   get activeViewComponent() {
@@ -58,11 +55,11 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
     }
   }
 
-  handleLaunchClick() {
+  handleLaunchClick = () => {
     this.setState({ viewName: 'details' });
   }
 
-  handleBackClick() {
+  handleBackClick = () => {
     this.setState({ viewName: 'list' });
   }
 

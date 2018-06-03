@@ -39,7 +39,7 @@ class CountDown extends React.PureComponent {
 
  
   start = () => {
-    this.counterInterval = setInterval(this.tick, 1000) //1000ms -> 1sec
+    this.counterInterval = setInterval(this.tick, 1000) 
   }
 
   tick = () => {

@@ -13,19 +13,22 @@ constructor(props) {
     launches: [],
     isLoading: false
   }
-  this.fetchData = this.fetchData.bind(this);
-  this.handleFilterChange = this.handleFilterChange.bind(this);
 } // eslint-disable-line react/prefer-stateless-function
 
-  fetchData(value) {
-    this.setState({error: false});
-    this.setState({ isLoading: true});
-    let endpoint = "https://api.spacexdata.com/v2";
-    let rockets = "/launches?rocket_name=";
+  fetchData = (value = 'all') => {
+    this.setState({
+      error: false,
+      isLoading: true
+    });
+
+    const endpoint = "https://api.spacexdata.com/v2";
+    const rockets = "/launches?rocket_name=";
+    let url = 'https://api.spacexdata.com/v2/launches/all';
     const { rocketNameFilter, launches } = this.state;
     // !rocketNameFilter ? '' : rocketNameFilter;
-    rocketNameFilter === 'All Rockets' ? this.setState({ rocketNameFilter: ''}) : rocketNameFilter; ;
-    const url = endpoint + rockets + rocketNameFilter;
+    if(value !== 'all') {
+      url = endpoint + rockets + `${value}`;
+    }
       
     fetch(url)
       .then(response => response.json())
@@ -37,8 +40,6 @@ constructor(props) {
         isLoading: false, 
         error: true 
       }));
-    return launches.filter( launch => launch.rocket.rocket_name === rocketNameFilter ?  launch.rocket.rocket_name : 
-    this.setState({error: true})  );
 
   }
 
@@ -46,8 +47,13 @@ constructor(props) {
     this.fetchData();
   }
 
-  handleFilterChange(value) {
-    this.setState({ rocketNameFilter: value });
+  handleFilterChange = (value) => {
+    let { rocketNameFilter }  = this.state;
+    rocketNameFilter = value;
+    if(value == 'All Rockets') {
+       value = 'all';
+    }
+    console.log(value);
     this.fetchData(value);
   }
 

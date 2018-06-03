@@ -20,7 +20,7 @@ class ListElementLeft extends React.Component {
                       </div>
                       <div className="ListElement__stats"> 
                       <ul>
-                         <li key={location}>launch site: </li>
+                         <li key="{location}">launch site: </li>
                          <li className="specification_results">{location}
                         </li>
                       </ul>
