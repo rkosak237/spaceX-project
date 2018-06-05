@@ -1,28 +1,30 @@
 @import "~styles/variables"  // '~' informs sass-loader that is not relative path
 
-.launchDetails__title
+.launch-details__sub-title
 	@extend .category__title
 	color: $specification-color
 
-.launchDetails__container
+.launch-details_section
   flex: 1
 
-.launchDetails__wraper 
+.launch-details__container
 	display: flex
 	margin: 0 3rem 0 3rem
 	padding: 80px 0 80px 0
 
-.launchDetails-wraper__rocketLaunch
-	text-transform: uppercase 
+.launch-details__body--uppercase
+	text-transform: uppercase
+
+.launch-details__body
 	flex: 1
 
-	h1
+	.launch-details__title
 		color: $header-font-color
+		font-weight: 600
+		letter-spacing: 1.5px
+		font-size: 36px
 
-	img
+	.launch-details__img
 		padding-top: 55px
 		height: auto
 		width: 200px
-
-.launchDetails-wraper__rocketDetails
-	flex: 1

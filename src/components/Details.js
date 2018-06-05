@@ -4,12 +4,12 @@ class Details extends React.Component {
   render() {
 
     return (
-      <section className="section-container">
+      <section className="details__container">
         <h1 className="details__title"> Details</h1>
-        <div className="details__copy">
+        <div className="details__text">
           <p>{this.props.details}</p>
         </div>
-      </section>  
+      </section>
     );
   }
 }

@@ -1,20 +1,20 @@
 @import "~styles/variables"
 
-.ListElement__container
+.list-element
 	display: flex
 	flex-direction: row
 	flex: 1
 	padding-top: 35px
 
-.ListElement__wraper
+.list-element__container
 	flex: 1
 	cursor: pointer
 
-.ListElement--empty
+.list-element--empty
 	flex: 1
 	margin-left: 100px
 
-.ListElement__title
+.list-element__title
 	@extend .category__title
 	color: $white
 
@@ -22,8 +22,8 @@
 	text-align: right
 	justify-content: flex-end
 
-.ListElement__copyContainer--right
-	@extend .launchPad__copyContainer
+.list-element__body--right
+	@extend .launch-pad__container
 	justify-content: flex-end
 	border-top: 2px solid $emphasized-color
 	position: relative
@@ -38,7 +38,7 @@
 		top: -7px
 		background-color: $specification-color
 
-	&:after 
+	&:after
 		content: ''
 		width: 10px
 		height: 10px
@@ -48,8 +48,8 @@
 		left: -5px
 		top: -6px
 
-.ListElement__copyContainer
-	@extend .launchPad__copyContainer
+.list-element__body
+	@extend .launch-pad__container
 	width: 100%
 	justify-content: left
 	border-top: 2px solid $emphasized-color
@@ -64,7 +64,7 @@
 		right: -54.57px
 		top: -6px
 		background-color: $specification-color
-	&:after 
+	&:after
 		content: ''
 		width: 10px
 		height: 10px
@@ -77,16 +77,16 @@
 
 
 
-.ListElement__specification
+.list-element__specification
 	border-right: 1px solid $specification-color
 
-.ListElement__specification
+.list-element__specification
 	padding-right: 1rem
 
-.ListElement__stats 
+.list-element__location
 	padding-left: 1rem
 
-.ListElement__specification, .ListElement__stats
+.list-element__specification, .list-element__location
 	display: flex
 	margin-top: 20px
 
@@ -102,9 +102,9 @@
 			margin: 0
 			text-transform: uppercase
 
-		.specification_results 
+		.list-element__list
 			color: $white
 			padding: 0px 0.5rem 0 0.5rem
-			
+
 			@media only screen and (min-width: 1400px)
 				flex: 6

@@ -2,9 +2,6 @@ import { hot } from 'react-hot-loader';
 import * as React from 'react';
 import LaunchDetails from 'view/LaunchDetails';
 import LaunchesList from 'view/LaunchesList';
-// import Details from './components/Details.js';
-// import Rocket from './components/Rocket';
-// import LaunchPad from './components/LaunchPad.js';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import launch from './assets/launch.json';
@@ -44,7 +41,7 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
                 rocket={rocket}
                 onBackClick={this.handleBackClick}
               />
-              <Content 
+              <Content
               	links={launch}
               />
               <Footer />

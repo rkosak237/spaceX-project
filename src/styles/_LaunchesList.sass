@@ -1,14 +1,14 @@
 @import "variables"
 
-.launchesList__section
+.launches-list__section
 	display: flex
 	flex-direction: column
 
-.launchesList__first
+.launches-list__container
 	height: 90vh
 	margin: 0 0 100px 0
-	
-.moon
+
+.launches-list__background-img
 	display: flex
 	justify-content: center
 	background-image: url("../assets/img/moon.png")
@@ -21,25 +21,24 @@
 	align-items: center
 	justify-content: flex-end
 
-.launchesList__header
+.launches-list__title
 	color: $specification-color
 	font-size: 24px
 	letter-spacing: 18px
 	margin-top: 11px
 
-.launchesList__logotype
+.launches-list__logo
 	height: 19%
 	width: 32%
 
-	svg
+	.launches-list__logo-svg
 		height: 100%
 		width: 100%
 		padding-left: 63px
 
-.sweet-loading
-	display: flex
-	justify-content: center
-	margin-bottom: 50px
+
+
+//displayed error style
 
 .list__error
 	display: flex
@@ -51,3 +50,11 @@
 		font-size: 30px
 		letter-spacing: 9px
 
+
+
+//Loader
+
+.sweet-loading
+	display: flex
+	justify-content: center
+	margin-bottom: 50px

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import Details from './../components/Details';
@@ -20,25 +19,25 @@ class LaunchDetails extends React.Component {
   render() {
     const date = format(this.props.launch.launch_date_local, 'DD MMMM YYYY', {locale: en})
     const date_of_start = this.props.launch.launch_date_unix
-    
+
     return (
-      <section className="launchDetails_container">
-        <Header 
+      <section className="launch-details_section">
+        <Header
         onBackClick={this.props.onBackClick}/>
-         <div className="launchDetails__wraper">
-            <div className="launchDetails-wraper__rocketLaunch">
-                <h2 className="launchDetails__title">{date}</h2>
-                <h1>{this.props.launch.launch_site.site_name}</h1>
+         <div className="launch-details__container">
+            <div className="launch-details__body launch-details__body--uppercase">
+                <h2 className="launch-details__sub-title">{date}</h2>
+                <h1 className="launch-details__title">{this.props.launch.launch_site.site_name}</h1>
                 <CountDown to={date_of_start} today={Math.floor(new Date().getTime()/1000)} />
-                <img src={this.props.launch.links.mission_patch} />
+                <img className="launch-details__img" src={this.props.launch.links.mission_patch} />
             </div>
-            <div className="launchDetails-wraper__rocketDetails">
+            <div className="launch-details__body">
               <Details
               details={this.props.launch.details}
               />
               <Rocket
               description={this.props.rocket.description}
-              name={this.props.rocket.name} 
+              name={this.props.rocket.name}
               company={this.props.rocket.company}
               height={this.props.rocket.height}
               diameter={this.props.rocket.diameter}
@@ -48,7 +47,7 @@ class LaunchDetails extends React.Component {
               success_rate={this.props.rocket.success_rate_pct}
               cost={this.props.rocket.cost_per_launch}
               />
-              <LaunchPad 
+              <LaunchPad
               name={this.props.launchSite.full_name}
               location={this.props.launchSite.location}
               details={this.props.launchSite.details}

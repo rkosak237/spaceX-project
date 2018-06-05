@@ -1,13 +1,13 @@
 @import "variables"
 
-footer
+.footer__container
   background-color: $navigation-background-color
   display: flex
   justify-content: space-between
   align-items: center
   height: 100px
 
-.Container-footer
+.footer__body
 	display: flex
 	flex-wrap: wrap
 	justify-content: space-between
@@ -16,13 +16,13 @@ footer
 	margin-left: 146px
 	margin-right: 146px
 
-	p
+	.footer__text
 		text-align: right
 		flex: 1
 		color: $brownish-grey
 		font-size: 14px
 		letter-spacing: 1px
-		@media only screen and (min-width: 1400px) 
+		@media only screen and (min-width: 1400px)
 			flex: 2
 
 .footer__links
@@ -33,26 +33,24 @@ footer
 	letter-spacing: 1px
 	flex: 1
 	justify-content: space-between
-	
-	a
+
+	.footer__link-element
 		cursor: pointer
 
 		&:hover
 			color: $white
 
-	a:first-child
-		color: $brownish-grey
-		position: relative
+		&:first-child
+			color: $brownish-grey
+			position: relative
 
-		&:hover
-			color: $white
+			&:hover
+				color: $white
 
-		&:after
-			content: ' ';
-			background-color: $brownish-grey
-			height: 19px
-			width: 1px
-			position: absolute
-			right: -18px
-
-
+			&:after
+				content: ' ';
+				background-color: $brownish-grey
+				height: 19px
+				width: 1px
+				position: absolute
+				right: -18px

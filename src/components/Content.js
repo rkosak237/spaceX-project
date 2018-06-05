@@ -5,13 +5,13 @@ class Content extends React.Component {
   render() {
 
     return (
-    	<section className="Content-section">
-	        <div className="Content-wrapper">
-	        	<h1>mission links</h1>
-		        <div className="wrapper__buttons">
-		 			<button className="content_buttons">reddit campaign</button>
-		        	<button className="content_buttons">presskit</button>
-		        	<button className="content_buttons">mission video</button>
+    	<section className="content__section">
+	        <div className="content__container">
+	        	<h1 className="content__title">mission links</h1>
+		        <div className="content__buttons-container">
+		 			<button className="content__button">reddit campaign</button>
+		        	<button className="content__button">presskit</button>
+		        	<button className="content__button">mission video</button>
 		        </div>
 	        </div>
         </section>
