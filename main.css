@@ -60,7 +60,7 @@ body {
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, .launchDetails__title {
+.category__title, .launch-details__sub-title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -75,44 +75,44 @@ h1 {
 p, li {
   letter-spacing: 1px; }
 
-.launchDetails__title {
+.launch-details__sub-title {
   color: #a7a9ac; }
 
-.launchDetails__container {
+.launch-details_section {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1; }
 
-.launchDetails__wraper {
+.launch-details__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 0 3rem 0 3rem;
   padding: 80px 0 80px 0; }
 
-.launchDetails-wraper__rocketLaunch {
-  text-transform: uppercase;
+.launch-details__body--uppercase {
+  text-transform: uppercase; }
+
+.launch-details__body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1; }
-  .launchDetails-wraper__rocketLaunch h1 {
-    color: #0f0f0f; }
-  .launchDetails-wraper__rocketLaunch img {
+  .launch-details__body .launch-details__title {
+    color: #0f0f0f;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 36px; }
+  .launch-details__body .launch-details__img {
     padding-top: 55px;
     height: auto;
     width: 200px; }
-
-.launchDetails-wraper__rocketDetails {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1; }
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
+.category__title, .nav__container .nav__return-text, .launch-details__sub-title, .details__title, .rocket__title, .launch-pad__title, .list-element__title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -178,7 +178,7 @@ body {
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
+.category__title, .nav__container .nav__return-text, .launch-details__sub-title, .details__title, .rocket__title, .launch-pad__title, .list-element__title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -193,7 +193,7 @@ h1 {
 p, li {
   letter-spacing: 1px; }
 
-nav {
+.nav__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,14 +204,14 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #0f0f0f; }
-  nav .nav__title {
+  .nav__container .nav__return-text {
     padding-left: 5rem; }
 
 .nav__return {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1; }
-  .nav__return a {
+  .nav__return .nav__button-return {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -219,10 +219,10 @@ nav {
         -ms-flex-align: center;
             align-items: center;
     cursor: pointer; }
-    .nav__return a svg {
+    .nav__return .nav__button-return .nav__arrow-return-svg {
       padding-left: 52px;
       position: relative; }
-    .nav__return a:before {
+    .nav__return .nav__button-return:before {
       content: '';
       width: 4rem;
       height: 2px;
@@ -230,7 +230,7 @@ nav {
       background-color: #ccac5b;
       left: 54px; }
 
-.nav-wraper {
+.nav__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,7 +241,7 @@ nav {
       -ms-flex: 1;
           flex: 1; }
 
-.nav__company-logo svg {
+.nav__company-logo .nav__company-logo-svg {
   height: 2.9rem; }
 
 .nav__empty {
@@ -254,7 +254,7 @@ body {
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
+.category__title, .nav__container .nav__return-text, .launch-details__sub-title, .details__title, .rocket__title, .launch-pad__title, .list-element__title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -269,44 +269,44 @@ h1 {
 p, li {
   letter-spacing: 1px; }
 
-.launchDetails__title {
+.launch-details__sub-title {
   color: #a7a9ac; }
 
-.launchDetails__container {
+.launch-details_section {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1; }
 
-.launchDetails__wraper {
+.launch-details__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 0 3rem 0 3rem;
   padding: 80px 0 80px 0; }
 
-.launchDetails-wraper__rocketLaunch {
-  text-transform: uppercase;
+.launch-details__body--uppercase {
+  text-transform: uppercase; }
+
+.launch-details__body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1; }
-  .launchDetails-wraper__rocketLaunch h1 {
-    color: #0f0f0f; }
-  .launchDetails-wraper__rocketLaunch img {
+  .launch-details__body .launch-details__title {
+    color: #0f0f0f;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 36px; }
+  .launch-details__body .launch-details__img {
     padding-top: 55px;
     height: auto;
     width: 200px; }
-
-.launchDetails-wraper__rocketDetails {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1; }
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
+.category__title, .nav__container .nav__return-text, .launch-details__sub-title, .details__title, .rocket__title, .launch-pad__title, .list-element__title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -321,7 +321,7 @@ h1 {
 p, li {
   letter-spacing: 1px; }
 
-.details__copy {
+.details__text {
   border-top: 1px solid #ccac5b; }
 
 body {
@@ -329,7 +329,7 @@ body {
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
+.category__title, .nav__container .nav__return-text, .launch-details__sub-title, .details__title, .rocket__title, .launch-pad__title, .list-element__title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -386,7 +386,7 @@ body {
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
+.category__title, .nav__container .nav__return-text, .launch-details__sub-title, .details__title, .rocket__title, .launch-pad__title, .list-element__title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -401,7 +401,7 @@ h1 {
 p, li {
   letter-spacing: 1px; }
 
-.launchPad__copyContainer, .ListElement__copyContainer--right, .ListElement__copyContainer {
+.launch-pad__container, .list-element__body--right, .list-element__body {
   border-top: 1px solid #ccac5b;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -409,7 +409,7 @@ p, li {
   -ms-flex-pack: distribute;
       justify-content: space-around; }
 
-.launchPad__specification, .launchPad__stats {
+.launch-pad__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -420,14 +420,14 @@ p, li {
   margin-top: 25px;
   padding-left: 35px;
   padding-right: 35px; }
-  .launchPad__specification ul, .launchPad__stats ul {
+  .launch-pad__body ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0; }
-    .launchPad__specification ul li, .launchPad__stats ul li {
+    .launch-pad__body ul li {
       color: #a7a9ac;
       -ms-flex-pack: distribute;
           justify-content: space-around;
@@ -436,14 +436,14 @@ p, li {
           -ms-flex: 1;
               flex: 1;
       text-transform: uppercase; }
-    .launchPad__specification ul .specification_results, .launchPad__stats ul .specification_results {
+    .launch-pad__body ul .launch-pad__list {
       -webkit-box-flex: 4;
           -ms-flex: 4;
               flex: 4;
       color: #0f1112;
       padding: 0px 0.5rem 0 0.5rem; }
       @media only screen and (min-width: 1400px) {
-        .launchPad__specification ul .specification_results, .launchPad__stats ul .specification_results {
+        .launch-pad__body ul .launch-pad__list {
           -webkit-box-flex: 6;
               -ms-flex: 6;
                   flex: 6; } }
@@ -453,7 +453,7 @@ body {
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
+.category__title, .nav__container .nav__return-text, .launch-details__sub-title, .details__title, .rocket__title, .launch-pad__title, .list-element__title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -468,44 +468,44 @@ h1 {
 p, li {
   letter-spacing: 1px; }
 
-.launchDetails__title {
+.launch-details__sub-title {
   color: #a7a9ac; }
 
-.launchDetails__container {
+.launch-details_section {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1; }
 
-.launchDetails__wraper {
+.launch-details__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 0 3rem 0 3rem;
   padding: 80px 0 80px 0; }
 
-.launchDetails-wraper__rocketLaunch {
-  text-transform: uppercase;
+.launch-details__body--uppercase {
+  text-transform: uppercase; }
+
+.launch-details__body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1; }
-  .launchDetails-wraper__rocketLaunch h1 {
-    color: #0f0f0f; }
-  .launchDetails-wraper__rocketLaunch img {
+  .launch-details__body .launch-details__title {
+    color: #0f0f0f;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 36px; }
+  .launch-details__body .launch-details__img {
     padding-top: 55px;
     height: auto;
     width: 200px; }
-
-.launchDetails-wraper__rocketDetails {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1; }
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
+.category__title, .nav__container .nav__return-text, .launch-details__sub-title, .details__title, .rocket__title, .launch-pad__title, .list-element__title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -520,7 +520,7 @@ h1 {
 p, li {
   letter-spacing: 1px; }
 
-.launchesList__section {
+.launches-list__section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -529,11 +529,11 @@ p, li {
       -ms-flex-direction: column;
           flex-direction: column; }
 
-.launchesList__first {
+.launches-list__container {
   height: 90vh;
   margin: 0 0 100px 0; }
 
-.moon {
+.launches-list__background-img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -557,28 +557,19 @@ p, li {
       -ms-flex-pack: end;
           justify-content: flex-end; }
 
-.launchesList__header {
+.launches-list__title {
   color: #a7a9ac;
   font-size: 24px;
   letter-spacing: 18px;
   margin-top: 11px; }
 
-.launchesList__logotype {
+.launches-list__logo {
   height: 19%;
   width: 32%; }
-  .launchesList__logotype svg {
+  .launches-list__logo .launches-list__logo-svg {
     height: 100%;
     width: 100%;
     padding-left: 63px; }
-
-.sweet-loading {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 50px; }
 
 .list__error {
   display: -webkit-box;
@@ -593,7 +584,16 @@ p, li {
     font-size: 30px;
     letter-spacing: 9px; }
 
-.wrapper__buttons {
+.sweet-loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 50px; }
+
+.filter-buttons__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -607,7 +607,7 @@ body {
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
+.category__title, .nav__container .nav__return-text, .launch-details__sub-title, .details__title, .rocket__title, .launch-pad__title, .list-element__title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -649,7 +649,7 @@ body {
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
+.category__title, .nav__container .nav__return-text, .launch-details__sub-title, .details__title, .rocket__title, .launch-pad__title, .list-element__title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -664,7 +664,7 @@ h1 {
 p, li {
   letter-spacing: 1px; }
 
-.ListElement__container {
+.list-element {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -677,19 +677,19 @@ p, li {
           flex: 1;
   padding-top: 35px; }
 
-.ListElement__wraper {
+.list-element__container {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   cursor: pointer; }
 
-.ListElement--empty {
+.list-element--empty {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   margin-left: 100px; }
 
-.ListElement__title {
+.list-element__title {
   color: #fff; }
 
 .right {
@@ -698,13 +698,13 @@ p, li {
       -ms-flex-pack: end;
           justify-content: flex-end; }
 
-.ListElement__copyContainer--right {
+.list-element__body--right {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   border-top: 2px solid #ccac5b;
   position: relative; }
-  .ListElement__copyContainer--right:before {
+  .list-element__body--right:before {
     content: '';
     position: absolute;
     width: 10px;
@@ -713,7 +713,7 @@ p, li {
     left: -55.57px;
     top: -7px;
     background-color: #a7a9ac; }
-  .ListElement__copyContainer--right:after {
+  .list-element__body--right:after {
     content: '';
     width: 10px;
     height: 10px;
@@ -723,14 +723,14 @@ p, li {
     left: -5px;
     top: -6px; }
 
-.ListElement__copyContainer {
+.list-element__body {
   width: 100%;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
   border-top: 2px solid #ccac5b;
   position: relative; }
-  .ListElement__copyContainer:before {
+  .list-element__body:before {
     content: '';
     position: absolute;
     width: 10px;
@@ -739,7 +739,7 @@ p, li {
     right: -54.57px;
     top: -6px;
     background-color: #a7a9ac; }
-  .ListElement__copyContainer:after {
+  .list-element__body:after {
     content: '';
     width: 10px;
     height: 10px;
@@ -751,38 +751,38 @@ p, li {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); }
 
-.ListElement__specification {
+.list-element__specification {
   border-right: 1px solid #a7a9ac; }
 
-.ListElement__specification {
+.list-element__specification {
   padding-right: 1rem; }
 
-.ListElement__stats {
+.list-element__location {
   padding-left: 1rem; }
 
-.ListElement__specification, .ListElement__stats {
+.list-element__specification, .list-element__location {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: 20px; }
-  .ListElement__specification ul, .ListElement__stats ul {
+  .list-element__specification ul, .list-element__location ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0; }
-    .ListElement__specification ul li, .ListElement__stats ul li {
+    .list-element__specification ul li, .list-element__location ul li {
       color: #a7a9ac;
       -ms-flex-pack: distribute;
           justify-content: space-around;
       margin: 0;
       text-transform: uppercase; }
-    .ListElement__specification ul .specification_results, .ListElement__stats ul .specification_results {
+    .list-element__specification ul .list-element__list, .list-element__location ul .list-element__list {
       color: #fff;
       padding: 0px 0.5rem 0 0.5rem; }
       @media only screen and (min-width: 1400px) {
-        .ListElement__specification ul .specification_results, .ListElement__stats ul .specification_results {
+        .list-element__specification ul .list-element__list, .list-element__location ul .list-element__list {
           -webkit-box-flex: 6;
               -ms-flex: 6;
                   flex: 6; } }
@@ -792,7 +792,7 @@ body {
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
+.category__title, .nav__container .nav__return-text, .launch-details__sub-title, .details__title, .rocket__title, .launch-pad__title, .list-element__title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -807,7 +807,7 @@ h1 {
 p, li {
   letter-spacing: 1px; }
 
-.Content-section {
+.content__section {
   background-image: url(rocket.png);
   background-size: cover;
   background-position: center;
@@ -826,16 +826,16 @@ p, li {
       -ms-flex-pack: end;
           justify-content: flex-end; }
 
-.Content-wrapper {
+.content__container {
   padding-bottom: 10rem; }
-  .Content-wrapper h1 {
+  .content__container .content__title {
     color: white;
     font-size: 24px;
     letter-spacing: 18px;
     text-transform: uppercase;
     text-align: center; }
 
-.content_buttons {
+.content__button {
   color: white;
   font-size: 14px;
   border: 1px solid white; }
@@ -845,7 +845,7 @@ body {
   font-size: 14px;
   color: #0f1112; }
 
-.category__title, nav .nav__title, .launchDetails__title, .details__title, .rocket__title, .launchPad__title, .ListElement__title {
+.category__title, .nav__container .nav__return-text, .launch-details__sub-title, .details__title, .rocket__title, .launch-pad__title, .list-element__title {
   font-weight: 600;
   letter-spacing: 9px;
   font-size: 14px;
@@ -860,7 +860,7 @@ h1 {
 p, li {
   letter-spacing: 1px; }
 
-footer {
+.footer__container {
   background-color: #22272b;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -873,7 +873,7 @@ footer {
           align-items: center;
   height: 100px; }
 
-.Container-footer {
+.footer__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -888,7 +888,7 @@ footer {
   text-transform: uppercase;
   margin-left: 146px;
   margin-right: 146px; }
-  .Container-footer p {
+  .footer__body .footer__text {
     text-align: right;
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -897,7 +897,7 @@ footer {
     font-size: 14px;
     letter-spacing: 1px; }
     @media only screen and (min-width: 1400px) {
-      .Container-footer p {
+      .footer__body .footer__text {
         -webkit-box-flex: 2;
             -ms-flex: 2;
                 flex: 2; } }
@@ -918,22 +918,22 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between; }
-  .footer__links a {
+  .footer__links .footer__link-element {
     cursor: pointer; }
-    .footer__links a:hover {
+    .footer__links .footer__link-element:hover {
       color: #fff; }
-  .footer__links a:first-child {
-    color: #666;
-    position: relative; }
-    .footer__links a:first-child:hover {
-      color: #fff; }
-    .footer__links a:first-child:after {
-      content: ' ';
-      background-color: #666;
-      height: 19px;
-      width: 1px;
-      position: absolute;
-      right: -18px; }
+    .footer__links .footer__link-element:first-child {
+      color: #666;
+      position: relative; }
+      .footer__links .footer__link-element:first-child:hover {
+        color: #fff; }
+      .footer__links .footer__link-element:first-child:after {
+        content: ' ';
+        background-color: #666;
+        height: 19px;
+        width: 1px;
+        position: absolute;
+        right: -18px; }
 
 
 /*# sourceMappingURL=main.css.map*/
