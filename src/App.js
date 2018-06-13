@@ -10,31 +10,31 @@ import rocket from './assets/rocket.json';
 
 import './styles/theme.sass';
 
+import MainStore from './store/MainStore';
+import { observable, action, computed } from 'mobx';
+import {inject, observer, Provider} from 'mobx-react';
+
+@observer
 class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
     super(props);
-    this.state = {
-      viewName: 'list',
-    };
   }
 
   get activeViewComponent() {
-    const { viewName } = this.state;
 
-    switch (viewName) {
+    switch (MainStore.currentViewName) {
       case 'list':
         return (
-          <main className="details__theme">
+          <div className="details__theme">
             <LaunchesList
               onLaunchClick={this.handleLaunchClick}
              />
-              <Footer />
-            </main>
+            </div>
         );
 
       case 'details':
         return (
-            <main>
+            <div>
               <LaunchDetails
                 launch={launch}
                 launchSite={launchSite}
@@ -42,28 +42,32 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
                 onBackClick={this.handleBackClick}
               />
               <Content
-              	links={launch}
+                links={launch}
               />
-              <Footer />
-            </main>
+            </div>
         );
 
       default: return null;
     }
   }
 
-  handleLaunchClick = () => {
-    this.setState({ viewName: 'details' });
+  @action handleLaunchClick = (view) => {
+    MainStore.switchCard('details');
+    // this.setState({ viewName: 'details' });
   }
 
-  handleBackClick = () => {
-    this.setState({ viewName: 'list' });
+  @action handleBackClick = () => {
+    // this.setState({ viewName: 'list' });
+    MainStore.switchCard('list');
   }
 
   render() {
     return (
       <main>
-        {this.activeViewComponent}
+        <Provider MainStore={MainStore}>
+          {this.activeViewComponent}
+        </Provider>
+        <Footer />
       </main>
     );
   }
