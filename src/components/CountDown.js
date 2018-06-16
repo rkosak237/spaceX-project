@@ -8,8 +8,8 @@ function getTimeDiff({to, today}) {
 }
 
 class CountDown extends React.PureComponent {
-	 counterInterval 
-  
+	counterInterval
+
   state = {
     secondsLeft: getTimeDiff(this.props),
     active: false,
@@ -37,9 +37,9 @@ class CountDown extends React.PureComponent {
     }
   }
 
- 
+
   start = () => {
-    this.counterInterval = setInterval(this.tick, 1000) 
+    this.counterInterval = setInterval(this.tick, 1000)
   }
 
   tick = () => {
@@ -54,7 +54,6 @@ class CountDown extends React.PureComponent {
     this.setState(newState)
   }
 
-  
   stop = () => {
     clearInterval(this.counterInterval)
   }
@@ -74,7 +73,7 @@ class CountDown extends React.PureComponent {
 
 	renderTimeLabel = () => {
 	    const { active, secondsLeft } = this.state
-	    
+
 	    const date = new Date(0)
 	    date.setSeconds(secondsLeft)
 	    const sec = Math.floor(date /1000) % 60;
@@ -83,14 +82,14 @@ class CountDown extends React.PureComponent {
 	    const days = Math.floor(date/(1000*60*60*24)) % 24;
 	    if (date > 0) {
 	    return <p>{days} DAYS {hrs} HRS {min} MINS {sec} SEC TO START</p>
-	   
-	    } else { 
+
+	    } else {
 	      return <p>{Math.abs(days)} DAYS {Math.abs(hrs)} HRS {Math.abs(min)} MINS {Math.abs(sec)} SEC SINCE START</p>
 	 	}
 	 }
-  
+
   render()
-    
+
     {
       return (
         <span>{this.renderTimeLabel()}</span>

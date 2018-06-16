@@ -7,69 +7,22 @@ import { observable, action, computed } from 'mobx';
 import {inject, observer, Provider} from 'mobx-react';
 
 @inject('MainStore')
+@observer
 class LaunchesList extends React.Component {
-constructor(props) {
-  super(props);
-  this.state = {
-    availableRocketNames: ['All Rockets', 'Falcon 1', 'Falcon 9', 'Falcon 10', 'Falcon Heavy'],
-    rocketNameFilter: '',
-    error: false,
-    launches: [],
-    isLoading: false
-  }
-} // eslint-disable-line react/prefer-stateless-function
 
-  fetchData = (value = 'all') => {
-    this.setState({
-      error: false,
-      isLoading: true
-    });
-
-    const endpoint = "https://api.spacexdata.com/v2";
-    const rockets = "/launches?rocket_name=";
-    let url = 'https://api.spacexdata.com/v2/launches/all';
-    const { rocketNameFilter, launches } = this.state;
-    // !rocketNameFilter ? '' : rocketNameFilter;
-    if(value !== 'all') {
-      url = endpoint + rockets + `${value}`;
-    }
-
-    fetch(url)
-      .then(response => response.json())
-      .then(data => data.length < 1 ?
-      this.setState({
-        error: true,
-        isLoading: false
-        })
-      :
-      this.setState({
-        launches: data,
-        isLoading: false
-        }))
-      .catch(error => this.setState({
-        isLoading: false,
-        error: true
-      }));
-
-  }
-
-  componentDidMount() {
-    this.fetchData();
-  }
-
-  handleFilterChange = (value) => {
-    let { rocketNameFilter }  = this.state;
+  @action handleFilterChange = (value) => {
+    let { rocketNameFilter, fetchData }  = this.props.MainStore;
     rocketNameFilter = value;
     if(value == 'All Rockets') {
        value = 'all';
     }
-    console.log(value);
-    this.fetchData(value);
+    fetchData(value);
   }
 
 
   render() {
-    const { launches } = this.props.MainStore.listState;
+    const { launches, isLoading, error } = this.props.MainStore.listState;
+    const { availableRocketNames } = this.props.MainStore;
     return (
       <section className="launches-list__section">
         <section className="launches-list__container">
@@ -85,19 +38,19 @@ constructor(props) {
             <h1 className="launches-list__title">Launches 2018</h1>
           </div>
         <FilterButtons
-          options={this.state.availableRocketNames}
+          options={availableRocketNames}
           onChange={this.handleFilterChange}
         />
         </section>
-        {this.state.isLoading ?
+        {isLoading ?
           <div className='sweet-loading'>
             <RingLoader
               color={'#FFF'}
-              loading={this.state.isLoading}
+              loading={isLoading}
             />
           </div>
           :
-          this.state.error ?
+          error ?
           <div className='list__error'>
             <span className="list__error-text">Sorry, no launches found</span>
           </div>

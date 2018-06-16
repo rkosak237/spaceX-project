@@ -9,7 +9,6 @@ module.exports = {
   devtool: 'cheap-module-source-map',
 
   entry: ['react-dev-utils/webpackHotDevClient', path.resolve('src/index.js')],
-  entry: ['babel-polyfill', './src/app'],
 
   resolve: {
     modules: [

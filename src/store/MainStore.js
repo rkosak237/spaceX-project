@@ -3,7 +3,7 @@ import { observable, action, computed, autorun } from 'mobx';
 class MainStore {
     @observable currentViewName = 'list';  // 'list' / 'details'
     @observable rocketNameFilter = '';
-    @observable  availableRocketNames: ['All Rockets', 'Falcon 1', 'Falcon 9', 'Falcon 10', 'Falcon Heavy'];
+    @observable  availableRocketNames = ['All Rockets', 'Falcon 1', 'Falcon 9', 'Falcon 10', 'Falcon Heavy'];
 
     @observable listState = {
         rocketNameFilter: '',
@@ -19,34 +19,37 @@ class MainStore {
       );
         // depends on currentViewName and rocketFilter
     }
-// @computed beforeFetch() {
-//   return this.listState.error && !this.listState.isLoading;
-// }
+@action beforeFetch(loading, error) {
+   this.listState.isLoading = !loading;
+   this.listState.error = error;
+}
 
-// @action isError() {
-//   return !this.listState.error && this.listState.isLoading;
-// }
+@action isError(loading, error) {
+  this.listState.isLoading = loading;
+  this.listState.isLoading = false;
+  this.listState.error = true;
+}
 
-@action successFetch(data) {
+@action successFetch(data, loading, error) {
 this.listState.launches = data.map(x => x);
 const {launches} = this.listState;
-// po przeniesieniu danych do obserwowanej tablicy, dane  trzeba zmapować żeby można było je użyć
+this.listState.isLoading = false;
+  this.listState.error = false;
+
 }
+
 @action switchCard(view) {
   this.currentViewName = view;
 }
 
-@action fetchData = (value = 'all') => {
-    // this.setState({
-    //   error: false,
-    //   isLoading: true
-    // });
-    // this.beforeFetch();
+@action fetchRocketDetails = (value = 'all') => {
+    const  {isLoading, error} = this.listState;
+    this.beforeFetch(isLoading, error);
     const endpoint = "https://api.spacexdata.com/v2";
     const rockets = "/launches?rocket_name=";
     let url = 'https://api.spacexdata.com/v2/launches/all';
     const { rocketNameFilter, launches } = this.listState;
-    // !rocketNameFilter ? '' : rocketNameFilter;
+    !rocketNameFilter ? '' : rocketNameFilter;
     if(value !== 'all') {
       url = endpoint + rockets + `${value}`;
     }
@@ -54,24 +57,34 @@ const {launches} = this.listState;
     fetch(url)
       .then(response => response.json())
       .then(data => data.length < 1 ?
-      // this.isError()
-      console.log('blad')
+      this.isError(isLoading, error)
       :
-      this.successFetch(data))
+      this.successFetch(data, isLoading, error))
       .catch(error =>
-      // this.isError()
-      console.log('error') )}
+      this.isError(isLoading, error)
+      )}
 
-    @action
-    handleFilterChange(value) {
-      let { rocketNameFilter }  = this.listState;
-      rocketNameFilter = value;
-      if(value == 'All Rockets') {
-         value = 'all';
-      }
-      console.log(value);
-      this.fetchData(value);
+@action fetchData = (value = 'all') => {
+    const  {isLoading, error} = this.listState;
+    this.beforeFetch(isLoading, error);
+    const endpoint = "https://api.spacexdata.com/v2";
+    const rockets = "/launches?rocket_name=";
+    let url = 'https://api.spacexdata.com/v2/launches/all';
+    const { rocketNameFilter, launches } = this.listState;
+    !rocketNameFilter ? '' : rocketNameFilter;
+    if(value !== 'all') {
+      url = endpoint + rockets + `${value}`;
     }
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => data.length < 1 ?
+      this.isError(isLoading, error)
+      :
+      this.successFetch(data, isLoading, error))
+      .catch(error =>
+      this.isError(isLoading, error)
+      )}
 }
 
 const store = new MainStore();

@@ -2,16 +2,22 @@ import React from 'react';
 import ListElementLeft from './../components/ListElementLeft';
 import ListElementRight from './../components/ListElementRight';
 
+import { observable, action, computed } from 'mobx';
+import {inject, observer, Provider} from 'mobx-react';
 
+@inject('MainStore')
+@observer
 class List extends React.Component {
 
   render() {
     const { launches } = this.props;
-    const RocketsList = launches.sort((a, b) => b.flight_number - a.flight_number);
+    const RocketsList = launches
+    .map(x => x)
+    .sort((a, b) => b.flight_number - a.flight_number);
     return (
 
         	<div id='list' className="list">
-                {RocketsList.map(side => 
+                {RocketsList.map(side =>
                     side.flight_number %2 ?
                     <ListElementRight
                         date={side.launch_date_local}

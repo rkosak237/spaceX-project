@@ -12,9 +12,6 @@ import Header from './../components/Header';
 class LaunchDetails extends React.Component {
   constructor() {
     super();
-    this.state = {
-      launch: null
-    }
   }
   render() {
     const date = format(this.props.launch.launch_date_local, 'DD MMMM YYYY', {locale: en})
