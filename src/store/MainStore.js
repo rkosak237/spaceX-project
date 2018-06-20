@@ -76,7 +76,6 @@ class MainStore {
     if(this.launch.length !=='0') {
     this.fetchRocketDetails();
     this.fetchSiteData();
-
     }
  }
 

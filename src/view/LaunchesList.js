@@ -26,7 +26,6 @@ class LaunchesList extends React.Component {
   render() {
     const { launches, isLoading, error } = this.props.MainStore.listState;
     const { availableRocketNames } = this.props.MainStore;
-    const { launchSiteData } = this.props.MainStore.siteData;
     return (
       <section className="launches-list__section">
         <section className="launches-list__container">

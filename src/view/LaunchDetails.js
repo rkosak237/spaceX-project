@@ -38,19 +38,7 @@ class LaunchDetails extends React.Component {
               <Details
               details={this.props.launch.details}
               />
-              { rocketData.isLoading ?
-              <div className='sweet-loading'>
-              <RingLoader
-                color={'#FFF'}
-                loading={rocketData.isLoading}
-                />
-              </div>
-              : rocketData.isFailed ?
-              <div className='list__error'>
-                <span className="list__error-text">Sorry, no launches found</span>
-              </div>
-              :
-              <Rocket/>}
+              <Rocket/>
               <LaunchPad
               name={this.props.launchSite.full_name}
               location={this.props.launchSite.location}
