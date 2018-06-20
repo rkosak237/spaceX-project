@@ -10,7 +10,8 @@ class FilterButtons extends React.Component {
     constructor(props) {
     super(props);
   }
-  handleClick(value, event) {
+
+  @action handleClick(value, event) {
     this.props.onChange(value);
   }
   render() {

@@ -9,6 +9,9 @@ import {inject, observer, Provider} from 'mobx-react';
 @inject('MainStore')
 @observer
 class LaunchesList extends React.Component {
+  constructor(props) {
+        super();
+    }
 
   @action handleFilterChange = (value) => {
     let { rocketNameFilter, fetchData }  = this.props.MainStore;
@@ -23,6 +26,7 @@ class LaunchesList extends React.Component {
   render() {
     const { launches, isLoading, error } = this.props.MainStore.listState;
     const { availableRocketNames } = this.props.MainStore;
+    const { launchSiteData } = this.props.MainStore.siteData;
     return (
       <section className="launches-list__section">
         <section className="launches-list__container">

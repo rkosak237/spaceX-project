@@ -42,10 +42,10 @@
 		content: ''
 		width: 10px
 		height: 10px
-		position: absolute
+		position: relative
 		background-image: url("../assets/img/arrow_pointer.png")
 		background-repeat: no-repeat
-		left: -5px
+		left: -99.5%
 		top: -6px
 
 .list-element__body
@@ -71,8 +71,8 @@
 		position: absolute
 		background-image: url("../assets/img/arrow_pointer.png")
 		background-repeat: no-repeat
-		right: -7px
-		top: -5px
+		right: -1%
+		top: -6px
 		transform: rotate(180deg)
 
 
@@ -102,8 +102,17 @@
 			margin: 0
 			text-transform: uppercase
 
-		.list-element__list
+		.list-element__location-element
 			color: $white
+			padding: 0px 0.5rem 0 0.5rem
+			text-overflow: ellipsis
+			white-space: nowrap
+			width: 28rem
+			overflow: hidden
+
+		.list-element__rocket-element
+			color: $white
+			width: 8rem
 			padding: 0px 0.5rem 0 0.5rem
 
 			@media only screen and (min-width: 1400px)

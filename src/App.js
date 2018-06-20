@@ -16,9 +16,7 @@ import {inject, observer, Provider} from 'mobx-react';
 
 @observer
 class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  constructor(props) {
-    super(props);
-  }
+
 
   get activeViewComponent() {
 
@@ -27,7 +25,6 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
         return (
           <div className="details__theme">
             <LaunchesList
-              onLaunchClick={this.handleLaunchClick}
              />
             </div>
         );
@@ -38,7 +35,6 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
               <LaunchDetails
                 launch={launch}
                 launchSite={launchSite}
-                rocket={rocket}
                 onBackClick={this.handleBackClick}
               />
               <Content
@@ -51,10 +47,10 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
     }
   }
 
-  @action handleLaunchClick = (view) => {
-    MainStore.switchCard('details');
-    // this.setState({ viewName: 'details' });
-  }
+  // @action handleLaunchClick = () => {
+  //   MainStore.switchCard('details');
+  //   // this.setState({ viewName: 'details' });
+  // }
 
   @action handleBackClick = () => {
     // this.setState({ viewName: 'list' });

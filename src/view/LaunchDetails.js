@@ -9,14 +9,20 @@ import { en } from 'date-fns/locale/en'
 import CountDown from './../components/CountDown';
 import Header from './../components/Header';
 
-class LaunchDetails extends React.Component {
-  constructor() {
-    super();
-  }
-  render() {
-    const date = format(this.props.launch.launch_date_local, 'DD MMMM YYYY', {locale: en})
-    const date_of_start = this.props.launch.launch_date_unix
 
+import { observable, action, computed } from 'mobx';
+import {inject, observer, Provider} from 'mobx-react';
+import { RingLoader } from 'react-spinners';
+
+@inject('MainStore')
+@observer
+class LaunchDetails extends React.Component {
+
+  render() {
+    const { MainStore, rocketData, launch } = this.props.MainStore;
+    const date = format(launch.date, 'DD MMMM YYYY', {locale: en})
+    const date_of_start = launch.launch_date_unix;
+    console.log(launch);
     return (
       <section className="launch-details_section">
         <Header
@@ -24,26 +30,27 @@ class LaunchDetails extends React.Component {
          <div className="launch-details__container">
             <div className="launch-details__body launch-details__body--uppercase">
                 <h2 className="launch-details__sub-title">{date}</h2>
-                <h1 className="launch-details__title">{this.props.launch.launch_site.site_name}</h1>
+                <h1 className="launch-details__title">{launch.site_name}</h1>
                 <CountDown to={date_of_start} today={Math.floor(new Date().getTime()/1000)} />
-                <img className="launch-details__img" src={this.props.launch.links.mission_patch} />
+                <img className="launch-details__img" src={launch.links} />
             </div>
             <div className="launch-details__body">
               <Details
               details={this.props.launch.details}
               />
-              <Rocket
-              description={this.props.rocket.description}
-              name={this.props.rocket.name}
-              company={this.props.rocket.company}
-              height={this.props.rocket.height}
-              diameter={this.props.rocket.diameter}
-              mass={this.props.rocket.mass}
-              first_flight={this.props.rocket.first_flight}
-              country={this.props.rocket.country}
-              success_rate={this.props.rocket.success_rate_pct}
-              cost={this.props.rocket.cost_per_launch}
-              />
+              { rocketData.isLoading ?
+              <div className='sweet-loading'>
+              <RingLoader
+                color={'#FFF'}
+                loading={rocketData.isLoading}
+                />
+              </div>
+              : rocketData.isFailed ?
+              <div className='list__error'>
+                <span className="list__error-text">Sorry, no launches found</span>
+              </div>
+              :
+              <Rocket/>}
               <LaunchPad
               name={this.props.launchSite.full_name}
               location={this.props.launchSite.location}
