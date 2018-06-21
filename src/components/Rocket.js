@@ -11,6 +11,7 @@ class Rocket extends React.Component {
   render() {
     const {rocketData} = this.props.MainStore;
     const {rocketsObj} = this.props.MainStore.rocketData;
+    console.log(rocketsObj.success_rate);
     return (
       <section className="rocket__container">
         <h1 className="rocket__title"> Rocket </h1>
@@ -48,8 +49,8 @@ class Rocket extends React.Component {
             <ul>
                 <li key="first-flight">first flight: <span>{rocketsObj.first_flight}</span></li>
                 <li key="country">country: <span>{rocketsObj.country}</span></li>
-                <li key="success-rate">success rate: <span>{rocketsObj.success_rate}%</span></li>
-                <li key="cost">cost per launch: <span> ${rocketsObj.cost}</span></li>
+                <li key="success-rate">success rate: <span>{rocketsObj.success_rate_pct}%</span></li>
+                <li key="cost">cost per launch: <span> ${rocketsObj.cost_per_launch}</span></li>
               </ul>
           </div>
         </div>}

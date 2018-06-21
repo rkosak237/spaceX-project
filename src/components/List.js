@@ -27,7 +27,8 @@ class List extends React.Component {
                         location={side.launch_site.site_name_long}
                         site_name={side.launch_site.site_name}
                         launch_date_unix={side.launch_date_unix}
-                        links={side.links.mission_patch}
+                        link_patch={side.links.mission_patch}
+                        links={side.links}
                         details={side.details}
                         onLaunchClick={this.props.onLaunchClick}
                     />
@@ -40,7 +41,8 @@ class List extends React.Component {
                         site_id={side.launch_site.site_id}
                         location={side.launch_site.site_name_long}
                         launch_date_unix={side.launch_date_unix}
-                        links={side.links.mission_patch}
+                        link_patch={side.links.mission_patch}
+                        links={side.links}
                         details={side.details}
                         onLaunchClick={this.props.onLaunchClick}
                     />

@@ -19,24 +19,12 @@ class CountDown extends React.PureComponent {
     this.togglePlay();
   }
 
-  componentDidUpdate() {
-    this.validateSuccess();
-  }
 
   componentWillUnmount() {
     clearInterval(this.counterInterval);
   }
 
-
-
-  validateSuccess = () => {
-    const { secondsLeft } = this.state
-    const { onSuccess } = this.props
-    if (secondsLeft === 0 && onSuccess) {
-      onSuccess()
-    }
-  }
-
+ rocketLaunched = () => {this.secondsLeft <=0;}
 
   start = () => {
     this.counterInterval = setInterval(this.tick, 1000)
@@ -88,11 +76,15 @@ class CountDown extends React.PureComponent {
 	 	}
 	 }
 
-  render()
-
-    {
+  render() {
       return (
+        <div>
+        {!this.rocketLaunched() ?
         <span>{this.renderTimeLabel()}</span>
+        :
+        <p>Rocket was launched {this.props.to}</p>
+        }
+      </div>
     );
   }
 }

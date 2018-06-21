@@ -2,10 +2,10 @@ import { hot } from 'react-hot-loader';
 import * as React from 'react';
 import LaunchDetails from 'view/LaunchDetails';
 import LaunchesList from 'view/LaunchesList';
-import Content from './components/Content';
+// import Content from './components/Content';
 import Footer from './components/Footer';
-import launch from './assets/launch.json';
-import launchSite from './assets/launch_site.json';
+// import launch from './assets/launch.json';
+// import launchSite from './assets/launch_site.json';
 import rocket from './assets/rocket.json';
 
 import './styles/theme.sass';
@@ -33,13 +33,9 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
         return (
             <div>
               <LaunchDetails
-                launch={launch}
-                launchSite={launchSite}
                 onBackClick={this.handleBackClick}
               />
-              <Content
-                links={launch}
-              />
+
             </div>
         );
 

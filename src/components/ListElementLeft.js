@@ -14,7 +14,6 @@ func = () => {
   this.props.MainStore.openedDetails(this.props);
 }
 
-
   render() {
     const { rocketList, key, location, date, onLaunchClick } = this.props;
     const formatedDate = format(date, 'DD MMMM YYYY', {locale: en})
