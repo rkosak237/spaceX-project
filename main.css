@@ -141,7 +141,7 @@ main {
   border-radius: 0rem;
   background: #fff; }
 
-button {
+button, .content__button {
   background-color: transparent;
   border-radius: 20px;
   color: #a7a9ac;
@@ -154,11 +154,11 @@ button {
   -webkit-transition: .4s ease-in-out;
   -o-transition: .4s ease-in-out;
   transition: .4s ease-in-out; }
-  button:hover {
+  button:hover, .content__button:hover {
     color: #fff;
     -webkit-box-shadow: inset 0px 0px 18px 0px #fff;
     box-shadow: inset 0px 0px 18px 0px #fff; }
-  button:active {
+  button:active, .content__button:active {
     color: #fff;
     -webkit-box-shadow: inset 0px 0px 18px 0px #fff;
     box-shadow: inset 0px 0px 18px 0px #fff; }
@@ -844,10 +844,15 @@ p, li {
     text-transform: uppercase;
     text-align: center; }
 
+.content__buttons-container {
+  margin: 5rem 0 0 0; }
+
 .content__button {
   color: white;
   font-size: 14px;
-  border: 1px solid white; }
+  border: 1px solid white;
+  cursor: pointer;
+  text-decoration: none; }
 
 body {
   font-family: 'Open Sans', sans-serif;
